@@ -1,3 +1,4 @@
+turtle.refuel()
 while(true) do
   while(turtle.detect) do
     for i=0,5,1 do
