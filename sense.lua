@@ -49,12 +49,12 @@ end
 
 function turn(turnDir, curDir)
 	ret = curDir
-	if turnDir == turn.L do
+	if turnDir == turn.L then
 		turtle.turnLeft()
 		if (curDir == dir.N) then ret = dir.W end
 		else ret = curDir - 1 end
 	end 
-	if turnDir == turn.R do
+	if turnDir == turn.R then
 		turtle.turnRight()
 		if (curDir == dir.W) then ret = dir.N end
 		else ret = curDir + 1 end
@@ -64,7 +64,7 @@ end
 
 function invertDir(dir)
 	newDir = dir - 2
-	if newDir < 0 do 
+	if newDir < 0 then 
 		newDir = newDir + 4 
 	end
 	return newDir
