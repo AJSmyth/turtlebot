@@ -11,7 +11,7 @@ function sense()
 	dir = {N = 0, E = 1, S = 2, W = 3}
 	turn = {L = 0, R = 1}
 
-	if wantBlock() do
+	if wantBlock() then
 		queue = {dir.E}
 		queueLast = 0
 		facing = dir.E
