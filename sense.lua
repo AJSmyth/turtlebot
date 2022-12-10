@@ -24,13 +24,6 @@ function sense()
 				turnDir = turn.L
 				if not i == 0 then turnDir = turn.R end
 				
-				--if facing where we came from all blocks are exhausted, start going back
-				if facing == queue[queueLast] then
-					turtle.forward()
-					queueLast = queueLast - 1
-					break
-				end
-				
 				--turn that way and see if we want to mine
 				facing = turnTo(turnDir, facing)
 				if wantBlock() then
@@ -38,6 +31,13 @@ function sense()
 					queue[queueLast] = invertDir(facing)
 					turtle.dig()
 					turtle.forward()
+					break
+				end
+				
+				--if facing where we came from all blocks are exhausted, start going back
+				if facing == queue[queueLast] then
+					turtle.forward()
+					queueLast = queueLast - 1
 					break
 				end
 			end
