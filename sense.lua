@@ -5,3 +5,14 @@ mine_block = {
 }
 
 --look left
+turtle.turnLeft()
+checkAndMine(turtle.sense())
+
+
+
+
+function checkAndMine(id)
+  if (mine_block[id] == true) then
+    turtle.dig()
+  end
+end
