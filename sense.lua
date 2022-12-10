@@ -21,8 +21,8 @@ function sense()
 		while (true) do
 			for i = 0,3,1 do
 				--decide which direction to turn
-				turnDir = turn.L
-				if not i == 0 then turnDir = turn.R end
+				turnDir = turn.R
+				if i == 0 then turnDir = turn.L end
 				
 				--turn that way and see if we want to mine
 				facing = turnTo(turnDir, facing)
