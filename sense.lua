@@ -45,6 +45,7 @@ function sense()
 				while (not facing == queue[queueLast]) do
 					facing = turnTo(turn.R, facing)
 				end
+				turtle.forward()
 				break 
 			end
 		end
