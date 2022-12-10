@@ -1,4 +1,4 @@
-mineblock = {
+mine_block = {
 	["minecraft:diamond_ore"] = true,        --diamond ore
 	["minecraft:iron_ore"] = true,           --iron ore
 	["minecraft:gold_ore"] = true,           --gold ore
@@ -6,6 +6,8 @@ mineblock = {
 	["ic2:resource"] = true,      		 --IC Ores
 	["thermalfoundation:ore"] = true,        --Thermal Foundation Ores
 }
+
+sense()
 
 function sense()
 	dir = {N = 0, E = 1, S = 2, W = 3}
