@@ -1,10 +1,10 @@
 mine_block = {
-	["minecraft:diamond_ore"] = true,       --diamond ore
-	["minecraft:iron_ore"] = true,          --iron ore
-	["minecraft:gold_ore"] = true,          --gold ore
-	["minecraft:redstone_ore"] = true, 		  --redstone ore
-	["ic2:resource"] = true,      			    --IC Ores
-	["thermalfoundation:ore"] = true        --Thermal Foundation Ores
+	"minecraft:diamond_ore" = true,       --diamond ore
+	"minecraft:iron_ore" = true,          --iron ore
+	"minecraft:gold_ore" = true,          --gold ore
+	"minecraft:redstone_ore" = true, 		  --redstone ore
+	"ic2:resource" = true,      			    --IC Ores
+	"thermalfoundation:ore" = true        --Thermal Foundation Ores
 }
 
 function sense()
