@@ -1,11 +1,11 @@
-while(true) then
-  while(turtle.getFuelLevel()<10000) then
+while(true) do
+  while(turtle.getFuelLevel()<10000) do
     turtle.refuel()
     end
   while(not(turtle.detect)) do
     turtle.forward()
     end
-  while(turtle.detect) then
+  while(turtle.detect) do
     for i=0,5,1 do
       turtle.dig()
       turtle.forward()
@@ -31,3 +31,4 @@ while(true) then
       end
     turtle.turnLeft()
   end
+end
