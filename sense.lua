@@ -42,7 +42,7 @@ function sense()
 				end
 			end
 			if (queueLast == 0) then 
-				while (not facing = queue[queueLast]) do
+				while (not facing == queue[queueLast]) do
 					facing = turnTo(turn.R, facing)
 				end
 				break 
