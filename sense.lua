@@ -10,24 +10,32 @@ function sense()
 
   --look left and scan
   turtle.turnLeft()
-  checkAndMine()
+  checkAndMineVein()
   
   --look right and scan
   turtle.turnRight()
   turtle.turnRight()
-  checkAndMine(turtle.inspect())
+  checkAndMineVein(turtle.inspect())
   
   --return forward and scan up and down
   turtle.turnLeft()
   if mine_block[turtle.inspectUp()] == true
-  checkAndMine(turtle.inspectDown())
+  checkAndMineVein(turtle.inspectDown())
 end
 
 function checkAndMineVein()
-  success, data = turtle.inspect()
-  if (mine_block[data] == true) then
-    turtle.dig()
-  end
+  --check facing block for ore of interest
+  move_queue = {}
+  while (turtle.detect()) {
+    success, data = turtle.inspect()
+    if (mine_block[data] == true) then
+      turtle.dig()
+    end
+    else
+  }
+  
+  
+
 end
   
 
