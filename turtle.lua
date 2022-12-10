@@ -1,6 +1,6 @@
 turtle.refuel()
 while(true) do
-  while(turtle.detect) do
+  if (turtle.detect()) then
     for i=0,5,1 do
       turtle.dig()
       turtle.forward()
