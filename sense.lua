@@ -7,8 +7,6 @@ mine_block = {
 	["thermalfoundation:ore"] = true,        --Thermal Foundation Ores
 }
 
-sense()
-
 function sense()
 	dir = {N = 0, E = 1, S = 2, W = 3}
 	turn = {L = 0, R = 1}
@@ -75,3 +73,5 @@ function wantBlock()
 	success, data = turtle.inspect()
 	return success and mine_block[data]
 end
+
+sense()
