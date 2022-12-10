@@ -48,16 +48,18 @@ function sense()
 end
 
 function turn(turnDir, curDir)
+	ret = curDir
 	if turnDir == turn.L do
 		turtle.turnLeft()
-		if (curDir == dir.N) then return dir.W end
-		return curDir = curDir - 1
+		if (curDir == dir.N) then ret = dir.W end
+		else ret = curDir - 1 end
 	end 
 	if turnDir == turn.R do
 		turtle.turnRight()
-		if (curDir == dir.W) then return dir.N end
-		return curDir = curDir + 1
+		if (curDir == dir.W) then ret = dir.N end
+		else ret = curDir + 1 end
 	end
+	return ret
 end
 
 function invertDir(dir)
