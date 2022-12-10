@@ -41,7 +41,12 @@ function sense()
 					break
 				end
 			end
-			if (queueLast < 0) then break end
+			if (queueLast == 0) then 
+				while (not facing = queue[queueLast]) do
+					facing = turnTo(turn.R, facing)
+				end
+				break 
+			end
 		end
 		--mined vein and returned
 		print("done")
