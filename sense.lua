@@ -51,12 +51,12 @@ function turn(turnDir, curDir)
 	ret = curDir
 	if turnDir == turn.L then
 		turtle.turnLeft()
-		if (curDir == dir.N) then ret = dir.W end
+		if (curDir == dir.N) then ret = dir.W
 		else ret = curDir - 1 end
 	end 
 	if turnDir == turn.R then
 		turtle.turnRight()
-		if (curDir == dir.W) then ret = dir.N end
+		if (curDir == dir.W) then ret = dir.N
 		else ret = curDir + 1 end
 	end
 	return ret
