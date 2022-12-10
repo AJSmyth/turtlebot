@@ -71,7 +71,7 @@ function invertDir(dir)
 end
 
 --returns true if the block we're looking at is something we want
-function wantBlock() {
+function wantBlock()
 	success, data = turtle.inspect()
 	return success and mine_block[data]
-}
+end
