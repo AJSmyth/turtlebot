@@ -35,7 +35,7 @@ function sense()
 				end
 
 				--if facing where we came from all blocks are exhausted, start going back
-				if facing = queue[queueLast] then
+				if facing == queue[queueLast] then
 					turtle.forward()
 					queueLast = queueLast - 1
 					break
