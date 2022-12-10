@@ -1,13 +1,16 @@
 function sense()
   mine_block = {
-    [56] = true,        --diamond ore
-    [4474] = true,      --copper ore
-    [5192] = true      --tin ore
+    ["minecraft:diamond_ore"] = true,        --diamond ore
+    ["minecraft:iron_ore"] = true,        --iron ore
+    ["minecraft:gold_ore"] = true,        --gold ore
+    ["minecraft:redstone_ore"] = true         --redstone ore
+    ["ic2:resource"] = true,      --IC Ores
+    ["thermalfoundation:ore"] = true       --Thermal Foundation Ores
   }
 
   --look left and scan
   turtle.turnLeft()
-  checkAndMine(turtle.inspect())
+  checkAndMine()
   
   --look right and scan
   turtle.turnRight()
@@ -16,12 +19,17 @@ function sense()
   
   --return forward and scan up and down
   turtle.turnLeft()
-  checkAndMine(turtle.inspectUp())
+  if mine_block[turtle.inspectUp()] == true
   checkAndMine(turtle.inspectDown())
 end
 
-function checkAndMine(id)
-  if (mine_block[id] == true) then
+function checkAndMineVein()
+  success, data = turtle.inspect()
+  if (mine_block[data] == true) then
     turtle.dig()
   end
 end
+  
+
+
+
