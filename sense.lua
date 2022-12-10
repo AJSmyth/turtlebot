@@ -39,9 +39,10 @@ function sense()
 					break
 				end
 			end
-			if (queueLast == -1) then break end
+			if (queueLast < 0) then break end
 		end
 		--mined vein and returned
+		print("done")
 	end
 end
 
