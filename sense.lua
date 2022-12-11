@@ -13,20 +13,12 @@ function sense()
 
 	if wantBlock() then
 		queue = {dir.W}
-		queueLast = -5
+		queueLast = 0
 		facing = dir.E
 		turtle.dig()
 		turtle.forward()
 		
 		while (true) do
-			if (queueLast == 0) then 
-				while (not facing == queue[queueLast]) do
-					facing = turnTo(turn.R, facing)
-				end
-				turtle.forward()
-				break 
-			end
-			if queueLast == -5 then queueLast = 0 end
 			
 			for i = 0,3,1 do
 				--decide which direction to turn
