@@ -12,7 +12,7 @@ function sense()
 	turn = {L = 0, R = 1}
 
 	if wantBlock() then
-		queue = {dir.E}
+		queue = {dir.W}
 		queueLast = 0
 		facing = dir.E
 		turtle.dig()
