@@ -1,7 +1,12 @@
 while (true) do
-  if 
-  
+  if turtle.getItemCount(turtle.getSelectedSlot() == 0 then
+      turtle.select(turtle.getSelectedSlot())
+  end
+  turtle.forward()
+  turtle.placeDown()
+end
   
 
 function getSlotBlocks()
-  
+   	return 
+end
