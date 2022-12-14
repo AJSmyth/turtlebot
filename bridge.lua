@@ -5,8 +5,3 @@ while (true) do
   turtle.forward()
   turtle.placeDown()
 end
-  
-
-function getSlotBlocks()
-   	return 
-end
