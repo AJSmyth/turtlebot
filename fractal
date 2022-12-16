@@ -101,4 +101,5 @@ while x ~= 0 or y ~= 0 do
   end
 
   -- Draw a fractal
-  drawF
+  drawFractal()
+end
