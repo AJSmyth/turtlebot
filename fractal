@@ -1,0 +1,104 @@
+-- Set up a wireless modem on the turtle
+rednet.open("right")
+
+-- Define the size of the chunk
+local chunkSize = 25
+
+-- Define the starting position of the turtle
+local x = 0
+local y = 0
+local z = 0
+
+-- Define the starting direction of the turtle
+local direction = "north"
+
+-- Define the color of the current pixel
+local color = "black"
+
+-- Place a block of the current color at the turtle's current position
+turtle.select(color == "black" and 16 or 15)
+turtle.place()
+
+-- Define a function to turn the turtle left
+function turnLeft()
+  if direction == "north" then
+    direction = "west"
+  elseif direction == "west" then
+    direction = "south"
+  elseif direction == "south" then
+    direction = "east"
+  elseif direction == "east" then
+    direction = "north"
+  end
+  turtle.turnLeft()
+end
+
+-- Define a function to turn the turtle right
+function turnRight()
+  if direction == "north" then
+    direction = "east"
+  elseif direction == "east" then
+    direction = "south"
+  elseif direction == "south" then
+    direction = "west"
+  elseif direction == "west" then
+    direction = "north"
+  end
+  turtle.turnRight()
+end
+
+-- Define a function to move the turtle forward
+function moveForward()
+  if not turtle.forward() then
+    -- If the turtle cannot move forward, turn left and try again
+    turnLeft()
+    if not turtle.forward() then
+      -- If the turtle still cannot move forward, turn around and try again
+      turnLeft()
+      turnLeft()
+      if not turtle.forward() then
+        -- If the turtle still cannot move forward, stop the program
+        print("Unable to move forward")
+        return false
+      end
+    end
+  end
+  return true
+end
+
+-- Define a function to draw a fractal pattern
+function drawFractal()
+  -- Turn left and move forward
+  turnLeft()
+  if not moveForward() then
+    return
+  end
+
+  -- Toggle the color
+  color = (color == "black") and "white" or "black"
+
+  -- Place a block of the current color
+  turtle.select(color == "black" and 16 or 15)
+  turtle.place()
+
+  -- If the turtle is within the chunk bounds, draw another fractal
+  if -chunkSize/2 <= x and x <= chunkSize/2 and -chunkSize/2 <= y and y <= chunkSize/2 then
+    drawFractal()
+  end
+end
+
+-- Keep drawing fractals until the turtle returns to the starting position
+while x ~= 0 or y ~= 0 do
+  -- Update the turtle's position based on its direction
+  if direction == "north" then
+    y = y + 1
+  elseif direction == "east" then
+    x = x + 1
+  elseif direction == "south" then
+    y = y - 1
+  elseif direction == "west" then
+    x = x - 1
+  end
+
+  -- Draw a fractal
+  drawF
