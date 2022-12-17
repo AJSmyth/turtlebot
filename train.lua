@@ -1,6 +1,6 @@
-stops = []
-distances = []
-colors = []
+stops = {}
+distances = {}
+colors = {}
 stopNum = 1
 
 term.clear()
