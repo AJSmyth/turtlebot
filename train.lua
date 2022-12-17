@@ -1,10 +1,12 @@
 stops = {}
+stops1 = {}
 distances = {}
 clrs = {}
 stopNum = 1
 
-for i = 0,10 do 
+for i = 1,10 do 
   stops[i] = ""
+  stops1[i] = ""
   distance[i] = 0
   clrs[i] = colors.white
 end
@@ -13,23 +15,27 @@ term.clear()
 term.setCursorBlink(false)
 term.setBackgroundColor(colors.black)
 
-function addStop(name, distance, color)
+function addStop(name, line2, distance, color)
   stops[stopNum] = name
+  stops1[stopNum] = line2
   distances[stopNum] = distance
   clrs[stopNum] = color
   stopNum = stopNum + 1
 end
 
 function drawStops()
+  stopNum = stopNum - 1
   x, y = term.getSize()
-  for i = 1,stopNum do 
-      R = i * math.floor(x/stopNum)
-      L = R - math.floor(x/stopNum)
-      paintUtils.drawFilledBox(L,0,R,y,clrs[i])
-      term.setCursorPos(L+1,0)
+  for i = 1, stopNum do 
+      R = i * x/stopNum
+      L = R - x/stopNum
+      paintUtils.drawFilledBox(L,1,R,y,clrs[i])
+      term.setCursorPos(L+1,1)
       term.setTextColor(clrs[i])
       term.write(stops[i])
-      term.setCursorPos(L+1,1)
+      term.setCursorPos(L+1,2)
+      term.write(stops1[i])
+      term.setCursorPos(L+1,3)
       term.write(tostring(distances[i]) .. " m")
    end
 end
