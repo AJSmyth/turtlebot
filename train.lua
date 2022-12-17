@@ -34,7 +34,6 @@ function drawStops()
       L = R - x/stopNum
       paintutils.drawFilledBox(L,1,R,y,clrs[i])
       term.setCursorPos(L+1,1)
-      term.setTextColor(clrs[i])
       term.write(stops[i])
       term.setCursorPos(L+1,2)
       term.write(stops1[i])
