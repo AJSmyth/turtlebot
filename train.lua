@@ -1,13 +1,17 @@
 stops = {}
 distances = {}
-colors = {}
+clrs = {}
 stopNum = 1
 
-for i = 0,10 do a[i] = 0 end
+for i = 0,10 do 
+  stops[i] = ""
+  distance[i] = 0
+  clrs[i] = colors.white
+end
 
 term.clear()
 term.setCursorBlink(false)
-term.setBackgroundColor(32768)
+term.setBackgroundColor(colors.black)
 
 function addStop(name, distance, color)
   stops[stopNum] = name
