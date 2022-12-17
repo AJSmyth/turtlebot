@@ -4,6 +4,9 @@ distances = {}
 clrs = {}
 stopNum = 1
 
+monitor = peripheral.wrap("bottom")
+term.redirect(monitor)
+
 for i = 1,10 do 
   stops[i] = ""
   stops1[i] = ""
