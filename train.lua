@@ -30,14 +30,14 @@ function drawStops()
   stopNum = stopNum - 1
   x, y = term.getSize()
   for i = 1, stopNum do 
-      R = i * x/stopNum
+      R = i * x/stopNum + 1
       L = R - x/stopNum
       paintutils.drawFilledBox(L,1,R,y,clrs[i])
       term.setCursorPos(L+1,1)
       term.write(stops[i])
       term.setCursorPos(L+1,2)
       term.write(stops1[i])
-      term.setCursorPos(L+1,3)
+      term.setCursorPos(L+1,5)
       term.write(tostring(distances[i]) .. " m")
    end
 end
