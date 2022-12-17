@@ -10,7 +10,7 @@ term.redirect(monitor)
 for i = 1,10 do 
   stops[i] = ""
   stops1[i] = ""
-  distance[i] = 0
+  distances[i] = 0
   clrs[i] = colors.white
 end
 
@@ -32,7 +32,7 @@ function drawStops()
   for i = 1, stopNum do 
       R = i * x/stopNum
       L = R - x/stopNum
-      paintUtils.drawFilledBox(L,1,R,y,clrs[i])
+      paintutils.drawFilledBox(L,1,R,y,clrs[i])
       term.setCursorPos(L+1,1)
       term.setTextColor(clrs[i])
       term.write(stops[i])
