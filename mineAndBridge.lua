@@ -1,3 +1,7 @@
+turtle.select(1)
+turtle.refuel()
+turtle.drop()
+
 while (true) do
   if turtle.getItemCount(turtle.getSelectedSlot()) == 0 then
     if (turtle.getSelectedSlot() == 16) then turtle.select(1)
