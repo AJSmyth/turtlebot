@@ -16,7 +16,7 @@ term.setBackgroundColor(colors.black)
 function addStop(name, distance, color)
   stops[stopNum] = name
   distances[stopNum] = distance
-  colors[stopNum] = color
+  clrs[stopNum] = color
   stopNum = stopNum + 1
 end
 
@@ -25,9 +25,9 @@ function drawStops()
   for i = 1,stopNum do 
       R = i * math.floor(x/stopNum)
       L = R - math.floor(x/stopNum)
-      paintUtils.drawFilledBox(L,0,R,y,colors[i])
+      paintUtils.drawFilledBox(L,0,R,y,clrs[i])
       term.setCursorPos(L+1,0)
-      term.setTextColor(colors[i])
+      term.setTextColor(clrs[i])
       term.write(stops[i])
       term.setCursorPos(L+1,1)
       term.write(tostring(distances[i]) .. " m")
