@@ -16,7 +16,7 @@ end
 
 term.clear()
 term.setCursorBlink(false)
-term.setBackgroundColor(colors.black)
+term.setTextColor(colors.black)
 
 function addStop(name, line2, distance, color)
   stops[stopNum] = name
@@ -43,10 +43,10 @@ function drawStops()
    end
 end
       
-addStop("Blaze Farm",300,colors.orange)
-addStop("Cherry",1000,colors.red)
+addStop("Blaze","Farm",300,colors.orange)
+addStop("Peshay","",1000,colors.red)
 drawStops()
 
 while true do
-  os.sleep(10)
+  os.sleep(600)
 end
